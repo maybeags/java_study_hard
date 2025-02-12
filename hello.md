@@ -85,3 +85,6 @@ System.out.println(a + b);
 git add .
 git commit -m "feat: 20250212 markdown lesson"
 git push
+
+chapter11_arrays package 생성
+ArrayTest01.java 클래스 생성
