@@ -92,3 +92,7 @@ ArrayTest01.java 클래스 생성
 git add .
 git commit -m "feat : 20250213 array lesson"
 git push
+
+git add .
+git commit -m "feat: 20250214 lotto game removing duplicated numbers"
+git push

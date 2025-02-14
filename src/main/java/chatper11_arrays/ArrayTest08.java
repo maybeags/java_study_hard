@@ -1,5 +1,6 @@
 package chatper11_arrays;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /*
@@ -26,8 +27,48 @@ public class ArrayTest08 {
     public static void main(String[] args) {
         // 랜덤 클래스 import
         Random random = new Random();
-        int a = random.nextInt(45);        // random.nextInt(한계값) -> 0 ~ (한계값-1)까지의 int값을 반환
-        System.out.println(a); // 0 ~ 44까지 튀어나온다는 의미겠네요
-        int b = random.nextInt(46); // 이 경우 0번이 나올 수도 있겠네요
+//        int a = random.nextInt(45);        // random.nextInt(한계값) -> 0 ~ (한계값-1)까지의 int값을 반환
+//        System.out.println(a); // 0 ~ 44까지 튀어나온다는 의미겠네요
+//        int b = random.nextInt(46); // 이 경우 0번이 나올 수도 있겠네요
+        // 중복 제거를 위한 변수 선언
+        boolean duplicate = false;
+        int[] lottoNumbers = new int[6];
+
+        // 여기서 아셔야 할 점은
+//        lottoNumbers[4]가 [1]번지의 숫자와 동일하다면
+        // 반복문이 한 번 다시 돌아야 하는데,
+        // lottoNumbers[0] != lottoNumbers[4]도 통과해야하고
+        // lottoNumbers[1] != lottoNumbers[4]도 통과해야하고
+        // lottoNumbers[2] != lottoNumbers[4]도 통과해야하고
+        // lottoNumbers[3] != lottoNumbers[4]도 통과해야하고
+
+        // 그리고 lottoNumbers[5]가 중복이 없다는 것을 확인하려면
+        // lottoNumbers[0] != lottoNumbers[5]도 통과해야하고
+        // lottoNumbers[1] != lottoNumbers[5]도 통과해야하고
+        // lottoNumbers[2] != lottoNumbers[5]도 통과해야하고
+        // lottoNumbers[3] != lottoNumbers[5]도 통과해야하고
+        // lottoNumbers[4] != lottoNumbers[5]도 통과해야하고
+
+        // 위에서 비어있는 배열 선언 했습니다 -> 임의의 숫자 담을 예정
+        // 2중 for문 만들어서 이 과정을 다섯 번 돌려버리면
+//        for (int i = 0 ; i < lottoNumbers.length ; i++) {
+//            lottoNumbers[i] = random.nextInt(45) + 1;
+//        }
+
+        // 요소 뽑아서 뭐 연산할거라면 또 반복문써야겠지만
+        // 집어넣은거 보기만 할건데 왜 굳이 쓸까요 // 그냥 Arrays.toString()
+
+//        System.out.println(Arrays.toString(lottoNumbers));
+
+        // 그래서 이상의 과정을 5번 반복하기 위해 정리된 코드
+        for ( int i = 0 ; i < 5 ; i++) {
+            for ( int j = 0 ; j < lottoNumbers.length ; j++ ) {
+                lottoNumbers[j] = random.nextInt(45) + 1;
+            }
+            Arrays.sort(lottoNumbers);
+            System.out.println(Arrays.toString(lottoNumbers));
+        }
+
+
     }
 }
