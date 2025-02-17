@@ -1,4 +1,4 @@
-package chatper11_arrays;
+package chapter11_arrays;
 /*
     향상된 for문(Enhanced for loop)
 

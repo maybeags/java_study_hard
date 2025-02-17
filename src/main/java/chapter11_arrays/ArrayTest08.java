@@ -1,4 +1,4 @@
-package chatper11_arrays;
+package chapter11_arrays;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -72,3 +72,8 @@ public class ArrayTest08 {
 
     }
 }
+/*
+
+    chapter12_inheritance package 생성
+    Animal.java 클래스 생성
+ */

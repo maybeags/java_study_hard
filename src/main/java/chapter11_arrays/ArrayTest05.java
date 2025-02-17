@@ -1,4 +1,4 @@
-package chatper11_arrays;
+package chapter11_arrays;
 
 import java.util.Arrays;
 import java.util.Comparator;
