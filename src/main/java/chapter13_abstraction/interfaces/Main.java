@@ -105,6 +105,40 @@ public class Main {
             remoteController.onPressedChannelUp()
             remoteController.onDownChannelDown()
             remoteController.onUpChannelUp()
+
+
+            과제 2
+
+            TemparatureDownButton, TemparatureUpButton, AirConditionerController.java
+            클래스를 만들고 정의해서
+            Main에 AirConditionerController 객체를 생성한 후
+
+            전원이 켜졌습니다.
+
+            온도를 한 칸 내립니다
+            온도를 계속 내립니다
+
+            온도를 한 칸 올립니다
+            온도를 계속 올립니다
+
+            전원이 꺼졌습니다.
+
          */
+        AirConditionerController airConditionerController = new AirConditionerController(
+                new PowerButton(),
+                new TemparatureDownButton(),
+                new TemparatureUpButton()
+        );
+
+        airConditionerController.onPressedPowerButton();
+        System.out.println();
+        airConditionerController.onPressedTemparatureDownButton();
+        airConditionerController.onDownTemparatureDownButton();
+        System.out.println();
+        airConditionerController.onPressedTemparatureUpButton();
+        airConditionerController.onUpTemparatureUpButton();
+        System.out.println();
+        airConditionerController.onPressedPowerButton();
+
     }
 }
