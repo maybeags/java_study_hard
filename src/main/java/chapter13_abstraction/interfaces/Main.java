@@ -51,7 +51,9 @@ public class Main {
         RemoteController remoteController = new RemoteController(
                 new PowerButton(),
                 new VolumeDownButton(),
-                new VolumeUpButton()
+                new VolumeUpButton(),
+                new ChannelDownButton(),
+                new ChannelUpButton()
         );
         //RemoteController remoteController = new RemoteController();까지 작성했을 경우에
         /*
@@ -83,5 +85,26 @@ public class Main {
         remoteController.onPressedVolumeDownButton();
         remoteController.onDownVolumeDownButton();
         remoteController.onPressedVolumeUpButton();
+        remoteController.onUpVolumeUpButton();
+
+        remoteController.onPressedChannelDownButton();
+        remoteController.onPressedChannelUpButton();
+        remoteController.onDownChannelDownButton();
+        remoteController.onUpChannelUpButton();
+        /*
+            ChannelDownButton을 정의하는데
+            -> Button을 상속받아서
+            -> method들을 정의합니다 -> VolumeDownButton을 참조해서
+            "채널을 한 칸 내립니다."
+            "채널을 계속 내립니다."
+            -> ChannelUpButton까지 동일하게 작성 후
+            -> RemoteController에 ChannelDownButton / ChannelUpButton을 field에 추가 -> 생성자도 수정
+            -> onPressedChannelDown / onPressedChannelUp / onDownChannelDown / onUpChannelUp 메서드 정의
+            -> Main -> RemoteController 객체 생성 시에 생성자 부분도 수정이 이루어져야합니다.
+            remoteController.onPressedChannelDown()
+            remoteController.onPressedChannelUp()
+            remoteController.onDownChannelDown()
+            remoteController.onUpChannelUp()
+         */
     }
 }
