@@ -56,5 +56,50 @@ public class CentralControl {
         // 해당 경우에 생겨날 수 있는 문제점 :
         //  배열의 특정 인덱스 내에 아무런 객체가 없는 상황이라면 .on()을 실행시켰을 때,
         // 컴파일링 에러가 발생할 확률이 있으므로, 이를 고려한 로직을 작성해야만 할 것입니다.
+
+        // 배열을 도는 반복문
+
+        // 반복문 내부에서 조건문 작성해야합니다. 특정 element가 null 이라면
+        // continue를 통해서 다음 반복으로 넘어가야 함.
+        // 걔를 통과하면 어떡하면 된다? .on()을 실행시키면 됩니다.
+//        for (int i = 0 ; i < deviceArray.length ; i++) {
+//            if(deviceArray[i] == null) {
+//                System.out.println((i+1) + " : 부분은 비어있습니다.");
+//                continue;
+//            }
+//            deviceArray[i].on();
+//        }
+
+        // 이상의 반복문 및 조건문에 해당하는 부분을 향상된 for문으로 작성하시오.
+
+        for ( Power device : deviceArray ) {
+            if (device == null) {
+                continue;
+            }
+            device.on();
+        }
     }
+
+    // powerOff() 메서드를 정의하시오 -> 일반 for문 / 향상된 for문으로 한 번.
+
+    public void powerOff() {
+//        for ( Power device : deviceArray ) {
+//            if (device == null) {
+//                continue;
+//            }
+//            device.off();
+//        }
+
+        for (int i = 0 ; i < deviceArray.length ; i++) {
+            if(deviceArray[i] == null) {
+                System.out.println((i+1) + " : 부분은 비어있습니다.");
+                continue;
+            }
+            deviceArray[i].off();
+        }
+    }
+
+
+
+
 }
