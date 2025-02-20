@@ -1,4 +1,7 @@
 package chapter14_casting.centralcontrol;
+
+import java.util.Arrays;
+
 /*
     20250220 수업 예정 부분
     CentralControl.java 파일을 만들건데,
@@ -29,7 +32,13 @@ public class Main {
         centralControl.powerOn();
 
         System.out.println();
+
+        centralControl.performSpecificMethod();
+
+        System.out.println();
         centralControl.powerOff();
+
+        centralControl.displayInfo();
     }
 }
 /*

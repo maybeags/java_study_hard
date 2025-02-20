@@ -99,7 +99,53 @@ public class CentralControl {
         }
     }
 
+    // 배열 내부를 돌면서 각 요소의 고유 메서드들을 호출하는 메서드
+    public void performSpecificMethod() {
+        // 향상된 for문으로 작성
+        for (Power device : deviceArray) {
+            // deviceArray 내부에 있는 element라면 기본적으로 Power 인터페이스의 메서드들을
+            // 구현 받은 클래스들의 인스턴스가 될겁니다.
+            // 그래서 해당 Power의 서브 객체들이 특정 클래스에 해당한다면 그 객체의 고유 메서드를
+            // 실행시키겠습니다
+            if (device instanceof Computer) {
+                Computer computer = (Computer) device;  // 이 코드가 실행된다면 device는 Computer
+                // 클래스의 객체라는 의미이므로 명시적 다운캐스팅을 하더라도 문제가 발생 x
+                computer.compute();
+            } else if (device instanceof LED) {
+                // 다운캐스팅 코드 쓰시오.
+                LED led = (LED) device;
+                // LED 클래스의 고유 메서드를 실행시키시오.
+                led.changeColor();
+            } else if (device instanceof Mouse) {
+                Mouse mouse = (Mouse) device;
+                mouse.leftClick();
+                // Speaker에 changeEqual() "이퀄라이저를 변경합니다"를 추가하여 여기서 실행시키세요
+                // Tv changeChannel() "채널을 변경합니다"를 추가하여 여기서 실행시키세요
+            } else if (device instanceof Speaker) {
+                Speaker speaker = (Speaker) device;
+                speaker.changeEqual();
+            } else if (device instanceof Tv) {
+                Tv tv = (Tv) device;
+                tv.changeChannel();
+            }
+        }
+    }
 
+    public Power[] getDeviceArray() {
+        return deviceArray;
+    }
 
-
+    public void displayInfo() {
+        int i = 1;
+        System.out.println("현재 연결된 장치 목록 : ");
+        for( Power device : deviceArray ) {
+            // 만약에 device가 null이라면 무시하고 지나갈 수 있도록 작성
+            if ( device == null ) {
+                System.out.println("슬롯 [ " + i + " ] 번 : 비어있음");
+                continue;
+            }
+            System.out.println("슬롯 [ " + i + " ] 번 : " + device.getClass().getSimpleName());
+            i++;
+        }
+    }
 }

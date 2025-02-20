@@ -10,4 +10,8 @@ public class Tv implements Power {
     public void off() {
         System.out.println("Tv의 전원을 끕니다.");
     }
+
+    public void changeChannel() {
+        System.out.println("Tv 채널을 변경합니다.");
+    }
 }

@@ -10,4 +10,8 @@ public class Mouse implements Power{
     public void off() {
         System.out.println("마우스의 전원이 꺼졌습니다.");
     }
+
+    public void leftClick() {
+        System.out.println("마우스 왼쪽 버튼 클릭합니다.");
+    }
 }
