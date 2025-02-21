@@ -55,7 +55,8 @@ public class Teacher {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Teacher teacher)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teacher teacher = (Teacher) o;
         return Objects.equals(name, teacher.name) && Objects.equals(schoolName, teacher.schoolName);
     }
 
