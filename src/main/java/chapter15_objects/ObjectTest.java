@@ -35,4 +35,51 @@ package chapter15_objects;
     그래서 equals를 어디서 저희가 확인했냐면
  */
 public class ObjectTest {
+    // 필드 선언
+    private String name;
+    private String address;
+
+    // 기본 생성자, 매개변수 생성자(AllArgsConstructor)를 생성
+    public ObjectTest() {
+    }
+
+    public ObjectTest(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+    // getter / setter 정의하세요
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    // displayInfo1()을 정의하세요. -> call1() 유형으로
+    // 실행 예
+    // 이름 : 안근수
+    // 주소 : 부산광역시 연제구
+    public void displayInfo1() {
+        System.out.println("이름 : " + this.name + "\n주소 : " + this.address);
+    }
+
+    // displayInfo2()를 정의하세요. -> call3() 유형으로
+    public String displayInfo2() {
+        return "이름 : " + this.name + "\n주소 : " + this.address;
+    }
+
+    @Override
+    public String toString() {
+        return "이름 : " + this.name + "\n주소 : " + this.address;
+    }
 }
