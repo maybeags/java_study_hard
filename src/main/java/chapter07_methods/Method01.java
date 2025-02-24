@@ -118,7 +118,7 @@ public class Method01 {
 
 
 
-//        call1();
+        call1();
 //
 //
 //        call2("웹 수업 잘하기...😥");      // 호출 단계에서 ()내에 있는 것이 argument
