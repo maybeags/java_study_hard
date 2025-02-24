@@ -20,4 +20,24 @@ public class Person {
         this.name = name;
         this.age = age;
     }
+
+    // 여러분들은 setter / getter를 만드시오 (롬복 사용하지 말고)
+
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "이름 : " + name + "\n나이 : " + age + '\n';
+    }
 }
