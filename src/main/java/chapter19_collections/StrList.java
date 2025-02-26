@@ -1,9 +1,6 @@
 package chapter19_collections;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /*
     컬렉션(Collection)은 여러 객체를 모아놓은 것을 의미함.
@@ -38,6 +35,37 @@ public class StrList {
         System.out.println(intArray);
         System.out.println(Arrays.toString(intArray));
         System.out.println(strList);        // 얘는 toString()이 정의돼있습니다.
+
+        // List의 출력 - Arrays 같은 식 말고 객체명으로 출력이 가능
+
+
+        // 특정 element(리스트 내의) 검색 -> .contains() 메서드를 이용
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("element명을 입력하세요 >>> ");
+//        String searchElem = scanner.nextLine();
+//
+//        boolean contains = strList.contains(searchElem);
+//        System.out.println(searchElem + " 포함 여부 : " + contains);
+
+        // element의 String 데이터 중 일부만 자른 검색 결과를 확인
+        String searchElem2 = "py";
+        boolean contains2 = strList.contains(searchElem2);      // 3형식 문장으로 생각하시면 됩니다.
+        System.out.println(searchElem2 + " 포함 여부 : " + contains2);
+        // 정확하게는 문자열 자체를 검색해서 확인하는 것이 아니라, 해당 List 내부의 요소를 전체 확인
+        // 하는 것이기 때문에 element 의 일부인 문자열로는 포함 여부 확인이 불가능
+
+        // 특정 element 삭제 -> .remove()
+        String removeElem = "C#";
+        boolean removed = strList.remove(removeElem);
+        System.out.println(removeElem + " 삭제 여부 : " + removed);
+        System.out.println(strList);    // [java, python, JavaScript, Kotlin]
+
+        // 마찬가지로 .remove() 역시 element 전체가 일치하는지를 확인하고 삭제를 수행하기 때문에
+        // element의 일부 데이터만 가지고 삭제를 진행할 수 없습니다.
+
+
+
+
     }
 
 }
